@@ -1,0 +1,67 @@
+.app-list-item {
+    font-size: 1.25rem;
+    color: black;
+}
+  
+.app-list-item button {
+    width: 35px;
+    height: 35px;
+    margin: 3px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-checkmark {
+    background-color: white;
+}
+
+.btn-checkmark:hover {
+    background:#526F35;
+    border-color:#526F35;
+    color:transparent;
+}
+
+.checkmark {
+    display: inline-block;
+    transform: rotate(45deg);
+    height: 24px;
+    width: 12px;
+    border-bottom: 7px solid #78b13f;
+    border-right: 7px solid #78b13f;
+}
+
+.app-list-item button:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.app-list-item .btn-star {
+    /* color: #FFD700; */
+    color: #aeaeae;
+    background-color: white;
+}
+
+.app-list-item .btn-trash {
+    color: #f26c65;
+    background-color: white;
+}
+
+.btn-trash:hover {
+    background-color: #f26c65;
+    color: white;
+}
+
+.app-list-item-label {
+    display: block;
+    line-height: 35px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.5s all;
+}
+
+.app-list-item.important .btn-star {
+    /* color: #aeaeae; */
+    color: #FFD700;
+}
+  

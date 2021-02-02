@@ -1,0 +1,10 @@
+.list-group-item {
+    margin-top: 10px;
+}
+
+.post-list {
+    padding: 20px 35px 10px 35px;
+    width: 70%;
+    display: inline-block; 
+}
+

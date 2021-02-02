@@ -3,6 +3,7 @@ import './app.css'
 
 import AppHeader from '../app-header'
 import PostAddForm from '../post-add-form'
+import PostList from '../post-list'
 
 
 export default class App extends Component {
@@ -20,10 +21,9 @@ export default class App extends Component {
         return(
             <div className='app'>
                 <AppHeader/>
-                <PostAddForm/>                
+                <PostAddForm/>
+                <PostList posts={this.state.data}/>                
             </div>
         )
     }
-    
-
 }
