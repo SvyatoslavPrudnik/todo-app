@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import './app.css'
 
 import AppHeader from '../app-header'
+import PostAddForm from '../post-add-form'
+
 
 export default class App extends Component {
     constructor(props){
@@ -17,7 +19,8 @@ export default class App extends Component {
     render() {
         return(
             <div className='app'>
-                <AppHeader/>                
+                <AppHeader/>
+                <PostAddForm/>                
             </div>
         )
     }
