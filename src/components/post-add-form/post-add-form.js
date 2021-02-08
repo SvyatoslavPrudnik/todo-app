@@ -35,7 +35,8 @@ export default class PostAddForm extends Component {
                     <input
                         placeholder='Добавить заметку'
                         className='form-input'
-                        onChange={this.onValueChange}>
+                        onChange={this.onValueChange}
+                        value={this.state.text}>
                     </input>
                     <button 
                     className='todo-button' 
