@@ -17,6 +17,8 @@ export default class App extends Component {
             ]
         }
         this.removeItem = this.removeItem.bind(this);
+        this.addItem = this.addItem.bind(this);
+        this.maxId = 4;
     }
 
     removeItem(id) {
@@ -28,11 +30,27 @@ export default class App extends Component {
             }
         })
     }
+
+    addItem(text) {
+        const newItem = {
+            title: text,
+            id: this.maxId++
+        }
+        this.setState(({data}) => {
+            const newData = [...data, newItem];
+            return{
+                data: newData
+            }
+        })
+    }
+    
+
     render() {
         return(
             <div className='app'>
                 <AppHeader/>
-                <PostAddForm/>
+                <PostAddForm
+                onAdd={this.addItem}/>
                 <PostList 
                 posts={this.state.data}
                 onRemove={this.removeItem}/>                
