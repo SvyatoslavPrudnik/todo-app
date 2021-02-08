@@ -20,6 +20,7 @@ export default class PostListItem extends Component {
     render() {
         const {label} = this.props;
         const {important} = this.state;
+        const {onRemove} = this.props;
         let importantClass = 'app-list-item d-flex justify-content-between';
 
         if (important){
@@ -39,7 +40,8 @@ export default class PostListItem extends Component {
                     <button type='button' className='btn-checkmark btn-sm'>
                         <i className='fa checkmark'></i>
                     </button>
-                    <button type='button' className='btn-trash btn-sm'>
+                    <button type='button' className='btn-trash btn-sm'
+                    onClick={onRemove}>
                         <i className='fa fa-trash-alt'></i>
                     </button>
                 </div>

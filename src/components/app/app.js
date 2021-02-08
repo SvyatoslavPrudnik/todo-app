@@ -16,13 +16,26 @@ export default class App extends Component {
                 {title: 'Купить воду', id: 3}
             ]
         }
+        this.removeItem = this.removeItem.bind(this);
+    }
+
+    removeItem(id) {
+        this.setState(({data}) => {
+            const index = data.findIndex(item => item.id === id)
+            const newData = [...data.slice(0, index), ...data.slice(index+1)]
+            return{
+                data: newData
+            }
+        })
     }
     render() {
         return(
             <div className='app'>
                 <AppHeader/>
                 <PostAddForm/>
-                <PostList posts={this.state.data}/>                
+                <PostList 
+                posts={this.state.data}
+                onRemove={this.removeItem}/>                
             </div>
         )
     }
