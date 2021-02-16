@@ -10,10 +10,9 @@ const PostList = (({posts, onRemove, onImportant, important}) => {
             <li key={item.id} className='list-group-item'>
                 <PostListItem 
                 label={item.title}
-                id={item.id}
+                important={item.important}
                 onRemove={() => onRemove(item.id)}
-                onImportant={() => onImportant(item.id)}
-                important={important}/>
+                onImportant={() => onImportant(item.id)}/>
             </li>
         )
     })
