@@ -6,14 +6,9 @@ export default class PostListItem extends Component {
 
     render() {
         const{label, important, onRemove, onImportant, completed, onCompleted} = this.props
-        let classNames = 'app-list-item d-flex justify-content-between';
-
-        if (important){
-            classNames += ' important'
-        }
 
         return(
-            <div className={classNames}>
+            <div className={`app-list-item d-flex justify-content-between ${important ? 'important' : ''}`}>
                 <span className={`app-list-item-label ${completed ? 'completed' : ''}`}>
                     {label}
                 </span>
