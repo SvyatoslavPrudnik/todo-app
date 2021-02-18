@@ -64,4 +64,9 @@
     /* color: #aeaeae; */
     color: #FFD700;
 }
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
   

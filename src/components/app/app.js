@@ -11,14 +11,15 @@ export default class App extends Component {
         super(props);
         this.state = {
             data: [
-                {title: 'Купить молоко', important: false, id: 1},
-                {title: 'Купить хлеб', important: false, id: 2},
-                {title: 'Купить воду', important: false, id: 3}
+                {title: 'Купить молоко', important: false, completed: false, id: 1},
+                {title: 'Купить хлеб', important: false, completed: false, id: 2},
+                {title: 'Купить воду', important: false, completed: false, id: 3}
             ]
         }
         this.removeItem = this.removeItem.bind(this);
         this.addItem = this.addItem.bind(this);
         this.onImportant = this.onImportant.bind(this);
+        this.onCompleted = this.onCompleted.bind(this);
         this.maxId = 4;
     }
 
@@ -32,14 +33,22 @@ export default class App extends Component {
         })
     }
 
+    onCompleted(id){
+        this.setState(({data}) => {
+            const index = data.findIndex(item => item.id === id);
+            const oldItem = data[index];
+            const newItem = {...oldItem, completed: !oldItem.completed};
+            const newArr = [...data.slice(0, index), newItem, ...data.slice(index+1)];
+            return{
+                data: newArr
+            }
+        })
+    }
+
     onImportant(id){
         this.setState(({data}) => {
-           
             const index = data.findIndex(item => item.id === id);
-            
-            
             const oldItem = data[index];
-            
             const newItem = {...oldItem, important: !oldItem.important};
             const newArr = [...data.slice(0, index), newItem, ...data.slice(index+1)];
             return{
@@ -76,7 +85,9 @@ export default class App extends Component {
                 posts={this.state.data}
                 onRemove={this.removeItem}
                 onImportant={this.onImportant}
-                important={this.state.data.important}/>                
+                onCompleted={this.onCompleted}
+                important={this.state.data.important}
+                completed={this.state.data.completed}/>                
             </div>
         )
     }
