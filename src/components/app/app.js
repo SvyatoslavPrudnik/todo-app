@@ -20,7 +20,10 @@ export default class App extends Component {
         this.addItem = this.addItem.bind(this);
         this.onImportant = this.onImportant.bind(this);
         this.onCompleted = this.onCompleted.bind(this);
-        this.maxId = 4;
+        
+        const {data} = this.state
+        this.maxId = data[data.length - 1].id + 1
+        
     }
 
     removeItem(id) {
